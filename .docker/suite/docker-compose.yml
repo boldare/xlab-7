@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+
+  spa:
+    build: ${APP_SPA_DOCKER_DIRECTORY}/
+    ports:
+     - "${APP_SPA_PORT_HTTP}:8080"
+    volumes:
+     - "${APP_SPA_DIRECTORY}:/app"
+
+  api:
+    build: ${APP_API_DOCKER_DIRECTORY}/
+    ports:
+     - "${APP_API_PORT_HTTP}:3000"
+    volumes:
+     - "${APP_API_DIRECTORY}:/app"
