@@ -8,6 +8,7 @@ sensor/node_modules
 api/config/xlab-smog.json
 sensor/config/xlab-sensor.json
 sensor-api/config/xlab-sensor.json
+
 sensor-api/.docker/suite/.env
 spa/.docker/suite/.env
 api/.docker/suite/.env
