@@ -2,8 +2,8 @@ var fetch = require('node-fetch');
 var config = require('../config/default');
 
 class PollutionDataFetcher {
-  fetch(latitude, longitude) {
-    const url = `${config.api}/feed/geo:${latitude};${longitude}/?token=${config.token}`;
+  fetch(id) {
+    const url = `${config.api}/feed/@${id}/?token=${config.token}`;
 
     /* Without Arrow function
     var that = this;

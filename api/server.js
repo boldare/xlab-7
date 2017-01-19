@@ -41,7 +41,7 @@ cron.schedule('*/30 * * * * *', function(){
     }
 
     pollutionDataFetcher
-      .fetch(city.latitude, city.longitude)
+      .fetch(city.id)
       .then(function (response) {
         saveToFirebase(city, response);
       });

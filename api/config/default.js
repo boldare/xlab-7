@@ -5,18 +5,15 @@ module.exports = {
   cities: [
     {
       key: 'gliwice',
-      latitude: 50.281578,
-      longitude: 18.6542319
+      id: '6539'
     },
     {
       key: 'krakow',
-      latitude: 50.0466814,
-      longitude: 19.8647907
+      id: '3402',
     },
     {
       key: 'pekin',
-      latitude: 39.9385466,
-      longitude: 116.1172752
+      id: '464'
     },
     {
       key: 'gliwice-sensor'
