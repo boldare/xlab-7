@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+
+  integration_api:
+    build: ${APP_SENSOR_DOCKER_DIRECTORY}/
+    ports:
+     - "${APP_SENSOR_PORT_HTTP}:3020"
+    volumes:
+     - "${APP_SENSOR_DIRECTORY}:/app"

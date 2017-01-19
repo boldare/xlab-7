@@ -1,0 +1,16 @@
+.pollution-chart {
+  div > svg {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.tick {
+  text {
+    fill: $color-white;
+  }
+}
+
+text.label {
+  fill: $color-white;
+}

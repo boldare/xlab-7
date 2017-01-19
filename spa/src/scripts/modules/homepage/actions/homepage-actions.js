@@ -1,17 +1,48 @@
 import 'whatwg-fetch';
 
-export function getHelloWorld() {
+export function selectCities(selectedCities) {
+    return (dispatch) => {
+        dispatch({
+            type: 'CITIES_SELECT',
+            selectedCities: selectedCities
+        });
+    };
+}
+
+export function selectCity(city) {
+    return (dispatch) => {
+        dispatch({
+            type: 'CITY_SELECT',
+            selectedCity: city
+        });
+    };
+}
+
+export function receivedFirebaseData(firebaseData) {
 	return (dispatch) => {
-		fetch('http://localhost:3000/api/index')
-			.then(function(response) {
-				return response.json();
-			}).then(function(json) {
-				dispatch({
-					type: 'MESSAGE_FETCHED',
-					message: json.message
-				});
-			}).catch(function(error) {
-				console.log('Error:', error)
-			});
-	}
+		dispatch({
+		  type: 'FIREBASE_DATA_RECEIVED',
+			firebaseData: firebaseData
+		});
+	};
+}
+
+export function updateData(newData, updatedChartData) {
+	return (dispatch) => {
+		dispatch({
+			type: 'DATA_UPDATE',
+			pollutionData: newData,
+            pollutionChartData: updatedChartData,
+            cities: Object.keys(newData)
+		});
+	};
+}
+
+export function updateChartData(selectedCities, data) {
+	return (dispatch) => {
+		dispatch({
+			type: 'CHART_DATA_UPDATE',
+			pollutionChartData: updatedChartData
+		});
+	};
 }

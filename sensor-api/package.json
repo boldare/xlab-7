@@ -1,0 +1,25 @@
+{
+  "name": "sensor-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha --timeout 10000 --recursive",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase-admin": "^4.0.4",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "swagger-jsdoc": "^1.8.4",
+    "swagger-ui-express": "^1.0.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.2.0",
+    "chai-things": "^0.2.0"
+  }
+}

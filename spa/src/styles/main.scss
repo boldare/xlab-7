@@ -1,1 +1,6 @@
-@import "components/global";
+@import 'vars';
+@import 'components/global';
+@import 'components/loader';
+@import 'components/weather';
+@import 'components/pollution-indicator';
+@import 'components/pollution-chart';

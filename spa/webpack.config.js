@@ -29,7 +29,11 @@ module.exports = {
 			{
 				test: /\.scss$/,
 				loader: ExtractTextPlugin.extract('css!sass')
-			}
+			},
+      {
+        test: /\.svg$/,
+        loader: 'babel?presets[]=es2015,presets[]=react!svg-react'
+      }
 		]
 	},
 	plugins: [

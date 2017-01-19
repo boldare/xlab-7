@@ -1,6 +1,16 @@
 api/node_modules
 spa/node_modules
-api/config/default.json
+sensor-api/node_modules
+sensor/node_modules
+
 .docker/suite/.env
 
+api/config/xlab-smog.json
+sensor/config/xlab-sensor.json
+sensor-api/config/xlab-sensor.json
+sensor-api/.docker/suite/.env
+spa/.docker/suite/.env
+api/.docker/suite/.env
+
 .idea
+spa/.jshintrc

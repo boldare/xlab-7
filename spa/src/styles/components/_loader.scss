@@ -1,0 +1,13 @@
+.loader-wrapper {
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+
+  .valign {
+    width: 100%;
+  }
+
+  .spinner-layer {
+    border-color: $color-white;
+  }
+}

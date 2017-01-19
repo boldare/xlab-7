@@ -7,11 +7,14 @@ import { combineReducers, createStore } from 'redux';
 import { Router, hashHistory } from 'react-router';
 import { Provider } from 'react-redux';
 
+import firebaseService from './utils/firebase-service';
 import appHistory from './utils/app-history';
 import routes from './utils/routes';
 import configureStore from './utils/configure-store';
 
 const store = configureStore();
+
+firebaseService.init();
 
 ReactDOM.render(
 	<div>

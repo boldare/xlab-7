@@ -1,0 +1,14 @@
+.weather-info--container {
+  .weather-info--text {
+    font-size: 26px;
+    font-weight: 700;
+  }
+}
+
+.icon {
+  svg {
+    display: block;
+    fill: $color-white;
+    margin: 0 auto;
+  }
+}

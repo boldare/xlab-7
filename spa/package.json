@@ -1,7 +1,7 @@
 {
-  "name": "saegus-cross-spa",
+  "name": "xlab-spa",
   "version": "1.0.0",
-  "description": "Saegus crossfounding application",
+  "description": "",
   "main": "index.js",
   "author": "Krzysztof Sopa<krzysztof.sopa@xsolve.pl>",
   "license": "ISC",
@@ -20,13 +20,18 @@
     "webpack-dev-server": "~1.16.2"
   },
   "dependencies": {
+    "firebase": "^3.6.5",
     "lodash": "4.13.1",
-    "react": "~15.4.1",
-    "react-dom": "~15.4.1",
+    "materialize-css": "^0.97.8",
+    "react": "~15.4.2",
+    "react-d3-components": "^0.6.5",
+    "react-dom": "~15.4.2",
+    "react-materialize": "^0.17.7",
     "react-redux": "^4.4.5",
     "react-router": "^2.5.2",
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
+    "svg-react-loader": "^0.3.7",
     "whatwg-fetch": "^2.0.1"
   },
   "scripts": {
