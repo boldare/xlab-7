@@ -11,10 +11,11 @@ class LocalSensorPollutionDataFetcher {
   transform(response) {
     var data = {};
 
+    console.log(response);
     data.name = 'Xsolve HQ';
-    data.pm25 = response[0].value ? response[0].value : null;
-    data.pm10 = response[1].value ? response[1].value : null;
-    data.pm1 = response[2].value ? response[2].value : null;
+    data.pm1 = response[0].value ? response[0].value : null;
+    data.pm25 = response[1].value ? response[1].value : null;
+    data.pm10 = response[2].value ? response[2].value : null;
     data.date = response[3].date;
 
     return data;
