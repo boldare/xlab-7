@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "test-sensor-data-transformer": "mocha --grep SensorDataTransformer",
     "test": "mocha --timeout 10000 --recursive",
     "start": "node server.js"
   },

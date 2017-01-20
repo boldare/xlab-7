@@ -32,8 +32,11 @@ describe('Sensor', () => {
                     expect(res.body[0].status).to.be.equals('ok');
                     expect(res.body[0].value).to.be.a('number');
 
+                    // Write service which will test PM2.5 and PM10 indicators values
+
                     done();
                 });
+                // How to mock firebase service?
           }, 8000);
         });
     });
