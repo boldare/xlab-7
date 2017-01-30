@@ -1,0 +1,5 @@
+FROM hypriot/rpi-node:6
+
+WORKDIR /app
+
+CMD npm install && npm start

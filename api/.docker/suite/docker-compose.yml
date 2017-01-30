@@ -1,8 +1,0 @@
-version: '2'
-
-services:
-
-  sensor_api:
-    build: ${APP_API_DOCKER_DIRECTORY}/
-    volumes:
-     - "${APP_API_DIRECTORY}:/app"
