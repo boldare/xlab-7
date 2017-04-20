@@ -14,7 +14,7 @@ import Weather from './weather/weather';
 import fireBaseService from '../../../utils/firebase-service';
 
 const DISPLAYED_VALUES_NUMBER = 1000;
-const defaultCities = ['gliwice', 'gliwice-sensor', 'krakow', 'pekin'];
+const defaultCities = ['gliwice', 'xsolve-hq', 'krakow', 'pekin'];
 
 class HomepageContainer extends React.Component {
     componentDidMount() {

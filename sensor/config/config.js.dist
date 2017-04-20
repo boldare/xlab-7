@@ -1,0 +1,7 @@
+module.exports = {
+  sensor: {
+    serialPort: '/dev/ttyUSB0',
+    sensorName: 'XSolve HQ',
+    sensorModel: 'SEN0177'
+  }
+}

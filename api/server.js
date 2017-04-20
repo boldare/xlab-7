@@ -1,19 +1,18 @@
-const config = require('./config/default');
+const config = require('./config/config');
+const PollutionDataFetcher = require('./services/pollution-data-fetcher');
 
-const pollutionDataFetcher = require('./services/pollution-data-fetcher');
-const localSensorPollutionDataFetcher = require('./services/local-sensor-pollution-data-fetcher');
+const pollutionDataFetcher = new PollutionDataFetcher(config);
+const firebaseAdmin = require("firebase-admin");
+const cron = require('node-cron');
 
-var admin = require("firebase-admin");
-var cron = require('node-cron');
-
-admin.initializeApp({
-  credential: admin.credential.cert("./config/xlab-smog.json"),
-  databaseURL: "https://xlab-smog.firebaseio.com"
+firebaseAdmin.initializeApp({
+  credential: firebaseAdmin.credential.cert("./config/xlab-smog.json"),
+  databaseURL: config.firebase.databaseUrl
 });
 
-function saveToFirebase(city, response) {
-  admin.database().ref(city.key).once('value').then(function(snapshot) {
-    var ref = admin.database().ref(city.key);
+const saveToFirebase = (city) => (response) => {
+  firebaseAdmin.database().ref(city.key).once('value').then(function(snapshot) {
+    var ref = firebaseAdmin.database().ref(city.key);
 
     if (!snapshot.val()) {
       ref.set({
@@ -28,22 +27,12 @@ function saveToFirebase(city, response) {
   });
 }
 
-cron.schedule('*/30 * * * * *', function(){
+function fetchData() {
   config.cities.forEach((city) => {
-    if ('gliwice-sensor' == city.key) {
-      localSensorPollutionDataFetcher
-        .fetch()
-        .then(function (response) {
-          saveToFirebase(city, response);
-        });
+    pollutionDataFetcher.fetch(city).then(saveToFirebase(city))
+  });
+}
 
-      return;
-    }
+fetchData();
 
-    pollutionDataFetcher
-      .fetch(city.id)
-      .then(function (response) {
-        saveToFirebase(city, response);
-      });
-  })
-});
+setInterval(fetchData, config.apiInterval * 1000)

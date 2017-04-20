@@ -1,0 +1,32 @@
+module.exports = {
+  apiInterval: 30,
+  waqiApi: {
+    baseUrl: 'https://api.waqi.info',
+    token: 'waqi-token'
+  },
+  firebase: {
+    databaseUrl: 'https://xlab-sensor.firebaseio.com/'
+  },
+  cities: [
+    {
+      key: 'gliwice',
+      id: 6539,
+      type: 'waqi'
+    },
+    {
+      key: 'krakow',
+      id: 3402,
+      type: 'waqi'
+    },
+    {
+      key: 'pekin',
+      id: 464,
+      type: 'waqi'
+    },
+    {
+      key: 'xsolve-hq',
+      type: 'xsolve',
+      url: 'http://sensor:3020/api/sensor'
+    }
+  ]
+}
